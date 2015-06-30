@@ -1,0 +1,17 @@
+﻿{
+	"name" : "Aiditz Blocker",
+	"version" : "1.0.0",
+	"author": "Vladimir M. <divineone@yandex.ru>",
+
+	"manifest_version": 2,
+	"description" : "",
+
+	"permissions": [
+		"tabs",
+		"<all_urls>"
+	],
+
+	"background": {
+		"scripts": ["background.js"]
+	}
+}
