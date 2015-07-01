@@ -7,7 +7,6 @@ var blockList = [
 		attr         - для tag и class - скрывает только при наличии атрибута с таким именем
 	}
 	*/
-	}
 	{
 		page : 'vk\\.com\\/feed$',
 		class: 'post',
