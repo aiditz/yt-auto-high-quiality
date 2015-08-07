@@ -4,15 +4,13 @@
     if (changeInfo.status != 'complete') return;
     
     setTimeout(function() {
-      var code = "var els = document.getElementsByClassName('ytp-drop-down-menu-button');" + 
-                 "for(var k in els) {" + 
-                 "  var el = els[k];" + 
-                 "  if (el.getAttribute('aria-labelledby') == 'ytp-menu-quality') {" + 
-                 "    el.click();" +
-                 "    break;" +
-                 "  }" +
-                 "}";
+      var code = "(function() { \n" +
+                  "document.getElementsByClassName('ytp-settings-button')[0].click();\n" +
+                  "var m = document.getElementById('ytp-main-menu-id');\n" + 
+                 "m.children[m.childElementCount-1].click();\n" +
+				 "setTimeout(function() {\n document.getElementsByClassName('ytp-quality-menu')[0].children[0].click(); \n}, 100);" +
+				 "})();";
       chrome.tabs.executeScript(tab.id, {code: code});
-    }, 1000);
+    }, 100);
   });
   
